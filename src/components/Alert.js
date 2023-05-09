@@ -3,7 +3,9 @@ import React from "react";
 const Alert = (props) => {
   return (
     <>
-      <div className="p-4 bg-red-100 border-l-4 border-red-500 rounded-md">
+      <div
+        className={`p-4 bg-blue-100 border-l-4 max-w-full justify-between flex border-red-500 rounded-md`}
+      >
         <div className="flex items-center space-x-4">
           <div>
             <svg
@@ -15,15 +17,15 @@ const Alert = (props) => {
             </svg>
           </div>
           <div className="">
-            <p className="text-sm font-medium text-red-600">
-             {props.massage}
+            <p className={`text-sm font-medium text-blue-600`}>
+              {props.alert.massage}
             </p>
           </div>
           <button>
             <svg
               fill="#000000"
               viewBox="0 0 32 32"
-              className="w-6 h-6 text-red-600 cursor-pointer"
+              className={`w-6 h-6 text-${props.alert.type}-600 cursor-pointer`}
               xmlns="http://www.w3.org/2000/svg"
             >
               <g id="SVGRepo_bgCarrier" stroke-width="0"></g>

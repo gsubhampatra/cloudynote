@@ -1,12 +1,11 @@
-import AddNote from "./AddNote";
-import Alert from "./Alert";
 import Notes from "./Notes";
 
-function Home() {
+function Home(props) {
+  const { showAlert } = props;
   return (
     <>
-      {/* <Alert massage="the note is deleted" /> */}
-      <Notes />
+    
+      <Notes showAlert={showAlert} />
     </>
   );
 }
