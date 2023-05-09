@@ -5,7 +5,7 @@ import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 const navigation = [
   { name: "Home", href: "/", current: true },
-  { name: "About", href: "/about", current: false },
+  { name: "About", href: "https://drive.google.com/file/d/1n_p78rsFNP10LKdvKKmXBkTAqRq-M_ny/view?usp=sharing", current: false },
 ];
 
 function classNames(...classes) {
