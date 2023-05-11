@@ -5,7 +5,11 @@ import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 const navigation = [
   { name: "Home", href: "/", current: true },
-  { name: "About", href: "https://drive.google.com/file/d/1n_p78rsFNP10LKdvKKmXBkTAqRq-M_ny/view?usp=sharing", current: false },
+  {
+    name: "About",
+    href: "https://drive.google.com/file/d/1n_p78rsFNP10LKdvKKmXBkTAqRq-M_ny/view?usp=sharing",
+    current: false,
+  },
 ];
 
 function classNames(...classes) {
@@ -14,11 +18,11 @@ function classNames(...classes) {
 
 function Navbar() {
   let location = useLocation();
-  const history = useNavigate()
-  const handelLogout=()=>{
-    localStorage.removeItem("token")
-   history('/login')
-  }
+  const history = useNavigate();
+  const handelLogout = () => {
+    localStorage.removeItem("token");
+    history("/login");
+  };
   return (
     <>
       <Disclosure as="nav" className="bg-sky-800">
@@ -67,25 +71,16 @@ function Navbar() {
                   </div>
                 </div>
                 {!localStorage.getItem("token") ? (
-                  <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                    <Link
-                      to="/login"
-                      className="px-6 py-3 mb-1 mr-1 text-sm font-bold text-white transition-all duration-150 ease-linear rounded shadow outline-none bg-sky-500 active:bg-sky-600 hover:shadow-md focus:outline-none"
-                    >
-                      Login
-                    </Link>
-                    <Link
-                      to="/signup"
-                      className="px-6 py-3 mb-1 mr-1 text-sm font-bold text-white transition-all duration-150 ease-linear rounded shadow outline-none bg-sky-500 active:bg-sky-600 hover:shadow-md focus:outline-none"
-                    >
-                      Signup
-                    </Link>
-                  </div>
+                  <div></div>
                 ) : (
-                  <> <button
-                  onClick={handelLogout}
-                  className="px-6 py-3 mb-1 mr-1 text-sm font-bold text-white transition-all duration-150 ease-linear rounded shadow outline-none bg-sky-500 active:bg-sky-600 hover:shadow-md focus:outline-none"
-                  >LogOut</button> </>
+                  <>
+                    <button
+                      onClick={handelLogout}
+                      className="px-6 py-3 mb-1 mr-1 text-sm font-bold text-white transition-all duration-150 ease-linear rounded shadow outline-none bg-sky-500 active:bg-sky-600 hover:shadow-md focus:outline-none"
+                    >
+                      Log Out
+                    </button>{" "}
+                  </>
                 )}
               </div>
             </div>

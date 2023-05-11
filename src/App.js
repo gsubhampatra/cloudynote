@@ -1,13 +1,13 @@
 import "./App.css";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
-import About from "./components/About";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import NoteState from "./context/notes/NoteState";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Alert from "./components/Alert";
 import { useState } from "react";
+import OnBoard from "./components/OnBoard";
 function App() {
   const [alert, setAlert] = useState(null);
   const showAlert = (massage, type) => {
@@ -37,6 +37,11 @@ function App() {
               exact
               path="/signup"
               element={<Signup showAlert={showAlert} />}
+            />
+            <Route
+              exact
+              path="/onboard"
+              element={<OnBoard/>}
             />
           </Routes>
         </BrowserRouter>
