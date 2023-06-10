@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import NoteContext from "./noteContext";
-const host = "https://cloudynote-api.vercel.app";
+const host =process.env.BASE_API_URL;
 const NoteState = (props) => {
   const initialNotes = [];
   const [notes, setNotes] = useState(initialNotes);
